@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>典贷通-中国互联网典、贷业一站化服务平台</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <!--公共样式-->
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/jquery-1.8.2.js"></script>
+    <!--公共js-->
+    <script src="js/common.js"></script>
+    <style type="text/css">
+        .tui-title {
+            height: 87px;
+            line-height: 87px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            font-size: 25px;
+            padding-top: 27px;
+        }
+
+        .tui-list {
+            margin: 0px 200px;
+            margin-top: 18px;
+        }
+
+        .tui-list p {
+            color: #000;
+        }
+
+        .tui-list p, .tui-list ul li {
+            line-height: 40px;
+            min-height: 40px;
+        }
+
+        .tui-list ul li {
+            padding-left: 26px;
+            min-height: 40px;
+            position: relative;
+            color: #898586;
+            width: 705px;
+            cursor: pointer;
+        }
+
+        .tui-list ul li input {
+            position: absolute;
+            top: 14px;
+            *top: 10px;
+            left: 8px;
+            *left: 4px;
+        }
+
+        .tui-list ul li span {
+            color: green;
+        }
+
+        .submit-box {
+            text-align: center;
+        }
+
+        .submit-box input {
+            background: url(https://cdni-m.yonghejinrong.com/i/btn.jpg) no-repeat;
+            background-size: 122px auto;
+            width: 122px;
+            height: 45px;
+            border: none;
+            cursor: pointer;
+            margin-top: 38px;
+        }
+
+        p.error_color {
+            color: red;
+            margin-left: 20px;
+        }
+
+        .tui-list {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<!--head开始-->
+<div class="head">
+    <!--顶头-->
+    <div class="top-head">
+        <div class="top-menu">
+            <!--左边-->
+            <div class="top-left">
+                <p>客服热线: &nbsp;400-050-3015</p>
+                <!--微信二维码-->
+                <div class="mobile">
+                    <p class="icc" id="wechat">
+                        <i class="Wechat"></i>微信
+                    </p>
+                    <!--二维码-->
+                    <div class="wecgat-rq">
+                    </div>
+                </div>
+                <!--QQ客服-->
+                <p class="icc"><a href="javascript:;" target="_blank"><i class="QQ"></i>客服</a></p>
+
+            </div>
+            <!--中间-->
+            <div class="top-center">
+                市场有风险 投资需谨慎
+            </div>
+            <!--右边-->
+            <div class="top-right">
+                <a target="_blank" href="enroll-1.html">快速注册</a>
+                <a target="_blank" href="login.html">立即登录</a>
+                <a target="_blank" href="help-center.html">帮助中心</a>
+            </div>
+        </div>
+    </div>
+    <!--LOGO及导航-->
+    <div class="top-nav">
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <div class="nav-list">
+            <ul class="nav-list-ul">
+                <li class="nav-lists"><a target="_blank" href="javascript:;" class="red">首页</a></li>
+                <li class="nav-lists"><a target="_blank" href="invest.html">我要出借</a></li>
+                <li class="nav-lists"><a target="_blank" href="borrow-money.html">我要借款</a></li>
+                <li class="nav-lists arg-show" style="position: relative;">
+                    <a target="_blank" href="javascript:;">信息披露</a>
+                    <ul class="nav-hides">
+                        <li class="nav-hides-list"><a href="operate.html">运营数据</a></li>
+                        <li class="nav-hides-list"><a target="_blank" href="secure.html">安全保障</a></li>
+                        <li class="nav-hides-list"><a href="business.html">业务模式</a></li>
+                        <li class="nav-hides-list"><a target="_blank" href="anenst.html">关于我们</a></li>
+                    </ul>
+                </li>
+                <li class="nav-lists tea-show" style="position: relative;">
+                    <a target="_blank" href="javascript:;">出借人教育</a>
+                    <ul class="nav-teach">
+                        <li class="nav-teach-list"><a href="#">风险教育</a></li>
+                        <li class="nav-teach-list"><a href="assess.html">风险评估</a></li>
+                        <li class="nav-teach-list"><a href="supervise.html">监管法规</a></li>
+                    </ul>
+                </li>
+                <li class="nav-lists"><a target="_blank" href="Beginners-Guide.html">新手引导</a></li>
+                <li class="nav-lists"><a target="_blank" href="my-account.html" class="my-cons"><i class="my-con"></i>我的账户</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!--head结束-->
+<div class="bd" style="background-color: #eaeaea;">
+    <div class="cbox" style="width: 1200px;margin: 0 auto;background-color: #fff;">
+        <form method='post' id="fm">
+            <h3 class="tui-title">风险承受能力评估</h3>
+            <br/>
+            <div style='font-size:14px; text-indent:2em; margin:0px 100px; line-height:30px; text-align:justify;'>
+                按照国家相关法律法规要求，雍和金融将根据以下15个问题对您进行风险评估。根据评估结果，您的风险承受能力将属于以下五种类型之一：保守型、稳健型、平衡型、成长型、进取型。为了给您提供更好的资产选择和理财服务，请您认真作答，感谢您的配合！
+            </div>
+            <div class="tui-list" style="margin-top:30px;">
+                <p>1、您目前的就业状况如何？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question1" value='固定职业，收入稳定，变化不大'/> 固定职业，收入稳定，变化不大</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question1" value='固定职业，以佣金收入为主'/>固定职业，以佣金收入为主</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question1" value='创业者或企业主'/>创业者或企业主</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question1" value='自由职业'/>自由职业</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>2、您的最高学历为？</p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question2" value='高中及以下'/>高中及以下</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question2" value='中专或大专'/>中专或大专</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question2" value='本科'/>本科</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question2" value='硕士'/>硕士</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question2" value='博士及以上'/> 博士及以上</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>3、您主要计划投资的期限是多久？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question3" value='壹到陆个月'/>1-6个月</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question3" value='陆到十二个月'/>6-12个月</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question3" value='一年三年'/>1年-3年</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question3" value='三年五年'/>3年-5年</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question3" value='五年以上'/>5年以上</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>4、您投资的目的是： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question4" value='1'/>资产保值，我不愿意承担任何投资风险</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question4" value='2'/>资产在保值的基础上，有小幅增长，我可以承担较低的投资风险</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question4" value='3'/>资产稳健增长，我可以承担一定的投资风险</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question4" value='5'/>资产迅速增长，我愿意承担很大的投资风险</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>5、您对理财产品的看法是： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question5" value='1'/>理财产品无风险，类似存款</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question5" value='2'/>理财产品应当保本，但收益不确定</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question5" value='3'/>理财产品本金可能产生少量损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question5" value='5'/>理财产品可能大幅亏损，应当仔细选择</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>6、以下哪项最能说明您的投资经验？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question6" value='1'/>基本没有金融产品相关知识，除存款、国债外，我几乎不投资其他金融产品</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question6" value='2'/>对金融产品有初步认识，除投资于存款、国债外，偶尔投资于股票、基金等产品</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question6" value='3'/>对金融产品有一定的理解，投资过存款、国债、银行理财产品、信托产品、股票、基金等产品
+                        </li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question6" value='4'/>对金融产品充分理解，主要投资于股票、基金、外汇、金融衍生品、海外投资产品等产品</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question6" value='5'/>金融专业人士，长期投资于证券、期货等产品</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>7、您持续投资股票、基金、外汇、金融衍生产品、海外投资产品（至少一项）的年限？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question7" value='1'/>没有经验</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question7" value='2'/>少于2年</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question7" value='3'/>2至5年</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question7" value='4'/>5至10年</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question7" value='5'/>10年以上</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>8、您如何理解风险的： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question8" value='1'/>风险就是损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question8" value='2'/>风险代表不确定性,可能会带来收益,也可能带来损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question8" value='3'/>风险代表机会,可能带来收益</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question8" value='5'/>风险代表巨大的额外收益机会</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>9、您的投资出现何种程度的波动时，您会呈现明显的焦虑？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question9" value='1'/>本金无损失，但收益未达预期</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question9" value='2'/>出现轻微本金损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question9" value='3'/>本金10％以内的损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question9" value='4'/>本金20-50％的损失</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question9" value='5'/>本金50％以上损失</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>10、假设有两种投资：投资A预期获得10%的收益，可能承担的损失非常小；投资B预期获得30%的收益，但可能承担较大亏损。您会怎么支配您的投资： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name="question10" value='1'/>全部投资于收益较小且风险较小的A</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question10" value='2'/>同时投资于A和B，但大部分资金投资于收益较小且风险较小的A</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question10" value='3'/>同时投资于A和B，但大部分资金投资于收益较大且风险较大的B</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name="question10" value='5'/>全部投资于收益较大且风险较大的B</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>11、如果预计一项投资会有较大的收益，但您没有足够的资金，您是否会借钱投资： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name='question11' value='1'/>一定不会借钱</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question11' value='2'/>可能不会借钱</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question11' value='3'/>一定会借钱</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question11' value='4'/>可能会借钱</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question11' value='5'/>不确定</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>12、您的家庭年收入为（折合人民币）？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name='question12' value='1'/>10万元以下</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question12' value='2'/>10-50万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question12' value='3'/>50-100万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question12' value='4'/>100-500万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question12' value='5'/>500万元以上</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>13、在您每年的家庭收入中，可用于金融投资的比例为？ </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name='question13' value='1'/>小于10%</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question13' value='2'/>10%至25%</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question13' value='3'/>25%至50%</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question13' value='5'/>大于50%</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>14、您的家庭的可投资资产状况（不包括不动产）（折合人民币）： </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name='question14' value='1'/>20万元以下</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question14' value='2'/>20万元-50万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question14' value='3'/>50万元-100万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question14' value='4'/>100万元-500万元</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question14' value='5'/>500万元以上</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="tui-list">
+                <p>15、除金融产品外，以下哪种资产状况符合您的实际情况。 </p>
+                <ul>
+                    <label>
+                        <li><input type="radio" name='question15' value='有自有住房和私家车'/>有自有住房和私家车</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question15' value='无自有住房，有私家车'/>无自有住房，有私家车</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question15' value='有自有住房，无私家车'/>有自有住房，无私家车</li>
+                    </label>
+                    <label>
+                        <li><input type="radio" name='question15' value='无自有住房和私家车'/>无自有住房和私家车</li>
+                    </label>
+                </ul>
+            </div>
+            <div class="submit-box">
+                <input id="submit" type="submit" value=""/>
+            </div>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+
+</div>
+<!--右侧悬浮回到顶部-->
+<div class="toolbar" id="rights" style="display: none">
+    <a href="#" class="toolbar-item toolbar-item-hint">
+        <span class="hint-datas">市场有风险投资需谨慎</span>
+    </a>
+    <a href="javascript:;" class="toolbar-item toolbar-item-weixin">
+        <span class="toolbar-layer"></span>
+    </a>
+    <a href="Feedback.html" class="toolbar-item toolbar-item-feedback"></a>
+    <a href="javascript:;" id="returnTop" class="toolbar-item toolbar-item-top"></a>
+</div>
+
+
+<div class="footer">
+    <div class="foo-conter">
+        <div class="foo-t">
+            <div class="foo-top">
+                <div class="foo-one">
+                    <ul>
+                        <li>
+                            <a target="_blank" href="business.html">业务模式</a>
+                            <a target="_blank" href="anenst.html">关于我们</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="secure.html">安全保障</a>
+                            <a target="_blank" href="help-center.html">常见问题</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="Franchise-chain.html">连锁加盟</a>
+                            <a target="_blank" href="Franchise-chain.html">合作伙伴</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foo-two">
+                    <p>客服邮箱：kefu@bjdiandaitong.com</p>
+                    <p><i class="tel"></i><b>400-050-3015</b></p>
+                    <p>工作日：09:00~18:00 - 节假日：09:00~18:00</p>
+                </div>
+                <div class="foo-three">
+                    <p>微信扫一扫</p>
+                    <i></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="foo-f">
+            <div class="foo-fotr">
+                <p>©2015 北京市典贷通信息服务有限公司 京ICP备15026559号 &nbsp;&nbsp;&nbsp;&nbsp;<a
+                        href="http://www.cnzz.com/stat/website.php?web_id=1255410260" title="站长统计"><em class=""><img
+                        src="http://icon.cnzz.com/img/pic.gif" alt=""></em></a></p>
+                <p>北京市海淀区上地国际创业园2号院一号楼17层</p>
+                <p>市场有风险 投资需谨慎</p>
+                <div class="certification">
+                    <a href="javascript:;"><i class="cer-1" title="诚信网站"></i></a>
+                    <a href="javascript:;"><i class="cer-2" title="互联网金融行业认证"></i></a>
+                    <a href="javascript:;"><i class="cer-3" title="行业认证"></i></a>
+                    <a href="javascript:;"><i class="cer-4" title="360网站安全监测"></i></a>
+                    <a href="javascript:;"><i class="cer-5" title="EV国际认证"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer结束-->
+<script>
+    $(function () {
+        $('#submit').click(function () {
+            $('.error_color').remove();
+            var submit = true;
+            $('.tui-list').each(function () {
+                var obj = $(this);
+                var select = false;
+                obj.children('ul').children('label').children('li').children('input').each(function () {
+                    if ($(this).attr('checked')) {
+                        select = true;
+                    }
+                });
+                if (!select) {
+                    submit = false;
+                    obj.children('p').after('<p class="error_color">请选择</p>');
+                }
+            });
+            if (!submit) {
+                return false;
+            }
+
+            var data = {};
+            $('#fm input').each(function () {
+                var name = $(this).attr('name');
+                var attr = $(this).attr('type');
+
+                if (attr == 'submit' || attr == 'button')
+                    return;
+
+                if ($(this).attr('type') == 'radio') {
+                    if ($(this).attr('checked')) {
+                        data[name] = $(this).val();
+                    }
+                } else {
+                    data[name] = $(this).val();
+                }
+            });
+
+            var is_login = '';
+            if (is_login == '') {
+                var total_score = 0;
+                for (var i in data) {
+                    if (parseInt(data[i]) > 0) {
+                        total_score = parseInt(total_score) + parseInt(data[i]);
+                    }
+                }
+                var assess_type = '';
+                var description = '';
+                if (total_score >= 11 && total_score <= 19) {
+                    assess_type = '保守型';
+                    description = '风险承受能力极低，对收益要求不高，但追求资本金绝对安全';
+                } else if (total_score >= 20 && total_score <= 28) {
+                    assess_type = '稳健型';
+                    description = '风险承受度较低，能容忍一定幅度的本金损失，止损意识强';
+                } else if (total_score >= 29 && total_score <= 37) {
+                    assess_type = '平衡型';
+                    description = '风险承受度适中，偏向于资产均衡配置，能够承受一定的投资风险';
+                } else if (total_score >= 38 && total_score <= 46) {
+                    assess_type = '成长型';
+                    description = '偏向于激进的资产配置，对风险有较高的承受能力，投资收益预期相对较高';
+                } else if (total_score >= 47 && total_score <= 55) {
+                    assess_type = '进取型';
+                    description = '对风险有非常高的承受能力，资产配置以高风险投资品种为主，投机性强';
+                }
+
+                $("#fm").css('display', 'none');
+                var html = '';
+                html += '<div style="text-align:center; margin-top:0px;"><p style="color:#ff6000; font-size:20px;">评估完成，您的风险承受能力为：' + assess_type + '</p></div>';
+                html += '<div style="color:#ff6000; font-size:18px; margin:10px 4% 10px; text-align:center;">';
+                html += '<p style="font-size:14px; color:#2f2f2f;">' + description + '</p></div>';
+                html += '<a href="http://www.diandaitongjinrong.com/" class="start-btn" style="width:160px;height:40px;line-height:40px;font-size:20px;color: #752a00;background:#f1b421;display:block;margin:0px auto;text-align:center;border-radius:0.312rem;font-weight:bold; margin-top:30px;">完成</a></div><br /><br />';
+                html += '';
+                $("#fm").parent(".cbox").append("<div style='margin:0px auto;width:1024px;'>" + html + "</div>");
+                return false;
+            } else {
+                $.post('index.html', data, function (res) {
+                    if (res.success == 'ok') {
+                        $("#fm").css('display', 'none');
+                        var html = '';
+                        html += '<div style="text-align:center; margin-top:0px;"><p style="color:#ff6000; font-size:20px;">评估完成，您的风险承受能力为：' + res.type + '</p></div>';
+                        html += '<div style="color:#ff6000; font-size:18px; margin:15px 4% 10px; text-align:center;">';
+                        html += '<p style="font-size:14px; color:#2f2f2f;">' + res.description + '</p></div>';
+                        html += '<a href="http://www.diandaitongjinrong.com/" class="start-btn" style="width:160px;height:40px;line-height:40px;font-size:20px;color: #752a00;background:#f1b421;display:block;margin:0px auto;text-align:center;border-radius:0.312rem;font-weight:bold; margin-top:30px;">完成</a></div><br /><br /><br />';
+                        $("#fm").parent(".cbox").append("<div style='margin:0px auto;width:1024px;'>" + html + "</div>");
+                    } else {
+                        alert('请先登录！');
+                    }
+                }, 'json');
+                return false;
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
